@@ -80,27 +80,18 @@
 
 
 
-<meta name="description" content="一级标题
-
-
-- ##">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Glide">
+<meta property="og:title" content="Glide图片加载框架的使用">
 <meta property="og:url" content="http://yoursite.com/2016/04/29/Glide/index.html">
 <meta property="og:site_name" content="NanYang">
-<meta property="og:description" content="一级标题
-
-
-- ##">
-<meta property="og:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
-<meta property="og:updated_time" content="2016-04-29T05:08:44.318Z">
+<meta property="og:description">
+<meta property="og:image" content="http://nuuneoi.com/uploads/source/playstore/cover.jpg">
+<meta property="og:updated_time" content="2016-05-01T06:17:26.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Glide">
-<meta name="twitter:description" content="一级标题
-
-
-- ##">
-<meta name="twitter:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
+<meta name="twitter:title" content="Glide图片加载框架的使用">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://nuuneoi.com/uploads/source/playstore/cover.jpg">
 
 
 
@@ -108,7 +99,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -118,7 +109,7 @@
   };
 </script>
 
-  <title> Glide | NanYang </title>
+  <title> Glide图片加载框架的使用 | NanYang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +130,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,7 +249,7 @@
             
             
               
-                Glide
+                Glide图片加载框架的使用
               
             
           </h1>
@@ -309,50 +300,179 @@
       
 
       
-        <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><ol>
-<li></li>
-</ol>
-<h2 id=""><a href="#" class="headerlink" title="- ## "></a>- ## </h2><a id="more"></a>
-<blockquote>
-<p><code>撒谎的撒</code> ##</p>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2></blockquote>
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><ul>
-<li>无序</li>
-<li>无序</li>
+        <p><img src="http://nuuneoi.com/uploads/source/playstore/cover.jpg" alt="Glide"><br><a id="more"></a></p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Glide由bumptech团队开发，在2014年Google正式推出，广泛的用在Google的开源项目中，Glide与Picasso有着很高的相似度，细节上有不少的区别，Glide比Picasso加载速度快，也比Picasso需要更大的缓存空间。</p>
+<h3 id="导入库"><a href="#导入库" class="headerlink" title="导入库"></a>导入库</h3><pre><code>dependencies {
+          compile&apos;com.github.bumptech.glide:glide:3.7.0&apos;
+   }
+</code></pre><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p> Glide 用起来非常简单</p>
+<pre><code>Glide.with(context)  
+     .load(http://img1.imgtn.bdimg.com/it/u=3519779342,2692245303&amp;fm=15&amp;gp=0.jpg&quot;)  
+     .into(imageview); 
+</code></pre><p>这就是加载一张图片的代码</p>
+<h3 id="常见设置"><a href="#常见设置" class="headerlink" title="常见设置"></a>常见设置</h3><ul>
+<li><code>.placeholder()</code> 占位图片</li>
+<li><code>.error()</code>  加载失败</li>
+<li><code>.crossFade()</code>淡入淡出  </li>
+<li><code>.dontAnimate()</code>无动画效果</li>
+<li><code>.override()</code>调整图片大小</li>
+<li><code>.transform()</code>自定义图形转换</li>
+<li><code>.skipMemoryCache(true)</code>不做内存缓存</li>
+<li><p><code>.diskCacheStrategy(DiskCacheStrategy.ALL)</code>磁盘缓存</p>
+<pre><code>DiskCacheStrategy.ALL  缓存所有版本的图片
+DiskCacheStrategy.NONE 不缓存任何图片
+DiskCacheStrategy.SOURCE 只缓存全分辨率的图像
+DiskCacheStrategy.RESULT 只缓存经过处理的图片
+</code></pre></li>
 </ul>
-<blockquote>
-<p>这一引用</p>
-</blockquote>
-<ol>
-<li>有序</li>
-<li>尤须！</li>
-</ol>
-<p><a href="https://www.baidu.com/" target="_blank" rel="external">baidu</a></p>
-<p><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" alt="Mou icon"></p>
-<h1 id="hello"><a href="#hello" class="headerlink" title="hello"></a>hello</h1><hr>
-<p><strong>粗体字</strong><br><em>斜体</em></p>
-<p>2016/4/29 12:42:10<br>2016/4/29 12:42:13</p>
-<hr>
-<ul>
-<li>不知大</li>
-<li>是</li>
-<li>撒旦</li>
-</ul>
-<hr>
-<pre><code>`Picasso.with(mContext)
-                    .load(R.drawable.steven)
-                    .placeholder(R.mipmap.ic_launcher)
+<p>用法（Glide可以加载gif图片 但是会消耗太多内存 谨慎使用）</p>
+<pre><code>Glide.with(mContext)
+     .load(R.drawable.steven)
+     .dontAnimate()
+     .placeholder(R.mipmap.ic_launcher)
+     .error(R.mipmap.ic_launcher)
+     .diskCacheStrategy(DiskCacheStrategy.ALL)
+     .transform(new BitmapRotateTransformation(mContext , 90f))  自定义将图片旋转90°
+     .into(imageView);
+</code></pre><h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><h4 id="设置网络访问库"><a href="#设置网络访问库" class="headerlink" title="设置网络访问库"></a>设置网络访问库</h4><p>设置为什么网络请求库就导入什么集成包，比如okhttp需导入 <code>compile &#39;com.github.bumptech.glide:okhttp-integration:1.4.0&#39;</code></p>
+<pre><code>//在Application设置Glide网络访问方式
+Glide.get(this).register(GlideUrl.class, InputStream.class,
+        new OkHttpUrlLoader.Factory(单例一个okhttpclien对象);
+</code></pre><p><code>.register(Class&lt;T&gt; modelClass, Class&lt;Y&gt; resourceClass, ModelLoaderFactory&lt;T, Y&gt; factory)</code>前两个参数为第三个参数的泛型</p>
+<h4 id="监听加载进度"><a href="#监听加载进度" class="headerlink" title="监听加载进度"></a>监听加载进度</h4><p>在调用<code>.into()</code>方法的时候不直接设置target，而是</p>
+<pre><code>Glide.with(mContext).load(urlString_net)
+                    .dontAnimate()        
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .error(R.mipmap.ic_launcher)
-                    .noFade()
-                    .into(imageView_show_picasso);
-            Glide.with(mContext)
-                    .load(R.drawable.steven)
-                    .dontAnimate()
-                    .placeholder(R.mipmap.ic_launcher)
-                    .error(R.mipmap.ic_launcher)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(imageView_show_glide);
-</code></pre><p>`</p>
+                    .into(new GlideDrawableImageViewTarget(imageView) { //加载失败
+                        @Override
+                        public void onLoadFailed(Exception e, Drawable errorDrawable) {
+                            super.onLoadFailed(e, errorDrawable);
+
+                        }
+
+                        @Override
+                        public void onLoadStarted(Drawable placeholder) {//加载开始
+                            super.onLoadStarted(placeholder);
+
+                        }
+
+                        @Override
+                        public void onResourceReady(GlideDrawable resource, GlideAnimation&lt;? super GlideDrawable&gt; animation) {//加载完成
+                            super.onResourceReady(resource, animation);
+
+                        }
+                    });
+</code></pre><h4 id="设置缓存大小及清除缓存"><a href="#设置缓存大小及清除缓存" class="headerlink" title="设置缓存大小及清除缓存"></a>设置缓存大小及清除缓存</h4><p>设置缓存大小</p>
+<pre><code>public class CustomGlideModule implements GlideModule {
+       @Override
+    public void applyOptions(Context context, GlideBuilder builder) {//应用选项
+
+//        .setMemoryCache(MemoryCache memoryCache)   
+//        .setBitmapPool(BitmapPool bitmapPool)         
+//        .setDiskCache(DiskCache.Factory diskCacheFactory) 
+//        .setDiskCacheService(ExecutorService service)    
+//        .setResizeService(ExecutorService service)  
+//        .setDecodeFormat(DecodeFormat decodeFormat) 
+
+    builder.setDecodeFormat(DecodeFormat.PREFER_ARGB_8888);
+
+    int cacheSize = 10 &lt;&lt; 20;
+    builder.setDiskCache(
+            new InternalCacheDiskCacheFactory(context, cacheSize) 内部缓存
+            //new ExternalCacheDiskCacheFactory(context, cacheSize) 外部缓存
+    );
+}
+
+@Override
+public void registerComponents(Context context, Glide glide) {//注册组件
+    // nothing to do here
+    }
+}
+</code></pre><p>在AndroidManifest创建</p>
+<pre><code>&lt;meta-data
+       android:name=&quot;cn.lny.glide.CustomGlideModule&quot;
+       android:value=&quot;GlideModule&quot; /&gt;
+</code></pre><p>清除缓存</p>
+<pre><code>//清除内存缓存
+Glide.get(mContext).clearMemory();
+//清除磁盘缓存
+new Thread(new Runnable() {
+    @Override
+    public void run() {
+           Glide.get(mContext).clearDiskCache();
+    }
+</code></pre><p>   注意：清除磁盘缓存必须在子线程</p>
+<h4 id="图形转换"><a href="#图形转换" class="headerlink" title="图形转换"></a>图形转换</h4><p>旋转</p>
+<pre><code>public class BitmapRotateTransformation extends BitmapTransformation {
+
+private float rotateRotationAngle = 0f;
+
+public BitmapRotateTransformation(Context context, float rotateRotationAngle) {
+    super(context);
+
+    this.rotateRotationAngle = rotateRotationAngle;
+}
+
+@Override
+protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
+    Matrix matrix = new Matrix();
+    matrix.postRotate(rotateRotationAngle);
+    Bitmap result = Bitmap.createBitmap(toTransform, 0, 0, toTransform.getWidth(), toTransform.getHeight(), matrix, true);
+    if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) {
+        result.setConfig(Bitmap.Config.ARGB_8888);
+    }
+    return result;
+}
+
+@Override
+public String getId() {
+    return getClass().getName();
+}
+</code></pre><p>}</p>
+<p>切圆角</p>
+<pre><code>public class BitmapCircleTransformation extends BitmapTransformation {
+public BitmapCircleTransformation(Context context) {
+    super(context);
+}
+
+@Override
+protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
+    return circleCrop(pool , toTransform);
+}
+
+
+private Bitmap circleCrop(BitmapPool pool, Bitmap source) {
+    if (source == null) return null;
+
+    int size = Math.min(source.getWidth(), source.getHeight());
+    int x = (source.getWidth() - size) / 2;
+    int y = (source.getHeight() - size) / 2;
+
+    //创建一个空白Bitmap，将在该Bitmap上铺设画布进行绘图
+    Bitmap result = pool.get(size, size, Bitmap.Config.ARGB_4444);
+    if (result == null) {
+        result = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_4444);
+    }
+
+    Canvas canvas = new Canvas(result);
+    Paint paint = new Paint();
+    paint.setAntiAlias(true);
+    //选择原图中的中心矩形，绘制在画布上
+    Bitmap squared = Bitmap.createBitmap(source, x, y, size, size);
+    paint.setShader(new BitmapShader(squared, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP));
+    float r = size / 2f;
+    canvas.drawCircle(r, r, r, paint);
+    return result;
+    }
+
+@Override
+public String getId() {
+    return getClass().getName();
+    }
+}
+</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Glide库在使用过程中内存占用低，扩展性强。无法设置加载图片的最大宽高，无法指定删除某一个图片的缓存（可以用加signature的方式试其失效并重新下载，但不可以删除）</p>
 
       
     </div>
@@ -390,7 +510,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/04/29/Glide/"
-     data-title="Glide"
+     data-title="Glide图片加载框架的使用"
      data-content=""
      data-url="http://yoursite.com/2016/04/29/Glide/">
   <div class="ds-share-inline">
@@ -420,7 +540,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/04/29/Glide/"
-           data-title="Glide" data-url="http://yoursite.com/2016/04/29/Glide/">
+           data-title="Glide图片加载框架的使用" data-url="http://yoursite.com/2016/04/29/Glide/">
       </div>
     
   </div>
@@ -504,7 +624,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number">1.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">- ## </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number">1.2.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">1.2.1.</span> <span class="nav-text">三级标题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hello"><span class="nav-number">2.</span> <span class="nav-text">hello</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入库"><span class="nav-number">2.</span> <span class="nav-text">导入库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">3.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见设置"><span class="nav-number">4.</span> <span class="nav-text">常见设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级用法"><span class="nav-number">5.</span> <span class="nav-text">高级用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置网络访问库"><span class="nav-number">5.1.</span> <span class="nav-text">设置网络访问库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听加载进度"><span class="nav-number">5.2.</span> <span class="nav-text">监听加载进度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置缓存大小及清除缓存"><span class="nav-number">5.3.</span> <span class="nav-text">设置缓存大小及清除缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图形转换"><span class="nav-number">5.4.</span> <span class="nav-text">图形转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
