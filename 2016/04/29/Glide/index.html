@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="NanYang">
 <meta property="og:description">
 <meta property="og:image" content="http://nuuneoi.com/uploads/source/playstore/cover.jpg">
-<meta property="og:updated_time" content="2016-05-01T06:42:46.774Z">
+<meta property="og:updated_time" content="2016-05-02T08:41:03.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Glide">
 <meta name="twitter:description">
@@ -432,7 +432,7 @@ public BitmapRotateTransformation(Context context, float rotateRotationAngle) {
     super(context);
 
     this.rotateRotationAngle = rotateRotationAngle;
-}
+    }
 
 @Override
 protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
@@ -443,14 +443,14 @@ protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, in
         result.setConfig(Bitmap.Config.ARGB_8888);
     }
     return result;
-}
+    }
 
 @Override
 public String getId() {
     return getClass().getName();
+    }
 }
-</code></pre><p>}</p>
-<p>切圆角</p>
+</code></pre><p>切圆角</p>
 <pre><code>public class BitmapCircleTransformation extends BitmapTransformation {
 public BitmapCircleTransformation(Context context) {
     super(context);
