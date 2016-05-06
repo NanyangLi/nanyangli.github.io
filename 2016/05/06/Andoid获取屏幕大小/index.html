@@ -80,22 +80,18 @@
 
 
 
-<meta name="description" content="念念不忘，必有回响
-
-最近访客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="comment">
-<meta property="og:url" content="http://yoursite.com/comment/index.html">
+<meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Andoid获取屏幕大小">
+<meta property="og:url" content="http://yoursite.com/2016/05/06/Andoid获取屏幕大小/index.html">
 <meta property="og:site_name" content="NanYang">
-<meta property="og:description" content="念念不忘，必有回响
-
-最近访客">
-<meta property="og:updated_time" content="2016-04-29T05:47:02.776Z">
+<meta property="og:description">
+<meta property="og:image" content="http://image.tianjimedia.com/uploadImages/2014/049/X6B5R0K9862Z.jpg">
+<meta property="og:updated_time" content="2016-05-06T13:56:49.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="comment">
-<meta name="twitter:description" content="念念不忘，必有回响
-
-最近访客">
+<meta name="twitter:title" content="Andoid获取屏幕大小">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://image.tianjimedia.com/uploadImages/2014/049/X6B5R0K9862Z.jpg">
 
 
 
@@ -113,13 +109,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    comment | NanYang
-  
-</title>
+  <title> Andoid获取屏幕大小 | NanYang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -140,7 +130,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,15 +230,159 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <p><blockquote class="blockquote-center">念念不忘，必有回响</blockquote><br><br></p>
-<blockquote>
-<p>最近访客</p>
-<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
-</blockquote>
 
-	  
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Andoid获取屏幕大小
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-06T20:51:24+08:00" content="2016-05-06">
+              2016-05-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/06/Andoid获取屏幕大小/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/06/Andoid获取屏幕大小/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+		  
+		    
+			<span id="busuanzi_container_page_pv">  |  阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://image.tianjimedia.com/uploadImages/2014/049/X6B5R0K9862Z.jpg" alt="windows"><br><a id="more"></a></p>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><pre><code>WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
+int width = wm.getDefaultDisplay().getWidth();
+int height = wm.getDefaultDisplay().getHeight();
+</code></pre><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><pre><code>WindowManager wm = this.getWindowManager();
+int width = wm.getDefaultDisplay().getWidth();
+int height = wm.getDefaultDisplay().getHeight();
+</code></pre><h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><pre><code>WindowManager manager = this.getWindowManager();
+DisplayMetrics outMetrics = new DisplayMetrics();
+manager.getDefaultDisplay().getMetrics(outMetrics);
+int width = metric.widthPixels; // 屏幕宽度（像素）
+int height = metric.heightPixels; // 屏幕高度（像素）
+float density = metric.density; // 屏幕密度（0.75 / 1.0 / 1.5）
+int densityDpi = metric.densityDpi; // 屏幕密度DPI（120 / 160 / 240
+</code></pre><h4 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h4><pre><code>Resources resources = this.getResources();
+DisplayMetrics dm = resources.getDisplayMetrics();
+float density = dm.density;
+int width = dm.widthPixels;
+int height = dm.heightPixels;
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/29/Glide/" rel="next" title="Glide">
+                <i class="fa fa-chevron-left"></i> Glide
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/06/Andoid获取屏幕大小/"
+     data-title="Andoid获取屏幕大小"
+     data-content=""
+     data-url="http://yoursite.com/2016/05/06/Andoid获取屏幕大小/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
   </div>
 
 
@@ -259,8 +393,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="comment/index.html"
-           data-title="comment" data-url="http://yoursite.com/comment/index.html">
+      <div class="ds-thread" data-thread-key="2016/05/06/Andoid获取屏幕大小/"
+           data-title="Andoid获取屏幕大小" data-url="http://yoursite.com/2016/05/06/Andoid获取屏幕大小/">
       </div>
     
   </div>
@@ -284,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -335,6 +478,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三"><span class="nav-number">3.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法四"><span class="nav-number">4.</span> <span class="nav-text">方法四</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -427,6 +581,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
