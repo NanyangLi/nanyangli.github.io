@@ -19,6 +19,7 @@
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/nebPay.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
 <script src="js/nebulas.js"></script>
 <!--<script src="js/nebpay.js"></script>-->
@@ -27,6 +28,8 @@
     var dappAddress = "n1pBdAdgQ9HTxUtTdumTn8NNcPZQ5NPPdWd";
     var nebulas = require("nebulas"), Account = Account, neb = new nebulas.Neb();
     neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"))
+    var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
+    var nebPay = new NebPay();
 
     function calculate() {
         var amount = document.getElementById('amount');
@@ -37,23 +40,30 @@
         var totalinterest = document.getElementById('totalinterest');
 
         var gas_price = "1000000";
-        var gas_limit = "200000";
-        var callArgs = "["+amount.value+","+apr.value+","+years.value+"]";
+        var gas_limit = "2000000";
+        var callArgs = "[" + amount.value + "," + apr.value + "," + years.value + "]";
         console.log(callArgs);
         var contract = {
             "function": "calculate",
             "args": callArgs
         };
-        neb.api.call(dappAddress, dappAddress, "0", "0",gas_price, gas_limit, contract).then(function (value) {
-            var result = value.result;
-            result = JSON.parse(result);
-            payment.innerText = result.payment;
-            total.innerText=result.total;
-            totalinterest.innerText=result.totalinterest;
-        }).catch(function (reason) {
-            console.log("error" + reason.message + reason.code );
-        })}
 
+        nebPay.call(dappAddress, "0.0001", "calculate", callArgs, {
+            listener: function (value) {
+                console.log(value);
+                neb.api.call(dappAddress, dappAddress, "0", "0", gas_price, gas_limit, contract).then(function (value) {
+                    var result = value.result;
+                    result = JSON.parse(result);
+                    payment.innerText = result.payment;
+                    total.innerText = result.total;
+                    totalinterest.innerText = result.totalinterest;
+                }).catch(function (reason) {
+                    console.log("error" + reason.message + reason.code);
+                })
+            }
+        });
+
+    }
 
 </script>
 <table>
@@ -63,7 +73,7 @@
     </tr>
     <tr>
         <td>贷款金额 (￥) :</td>
-        <td><input id="amount" /></td>
+        <td><input id="amount"/></td>
         <td rowspan=8>
             <canvas id='graph' width=400 height=250></canvas>
         </td>
@@ -72,13 +82,13 @@
         <td>
             年利率 (%) :
         </td>
-        <td><input id='apr' /></td>
+        <td><input id='apr'/></td>
     </tr>
     <tr>
         <td>
             还款期限 (年) :
         </td>
-        <td><input id='years' /></td>
+        <td><input id='years'/></td>
     </tr>
     <tr>
         <td>
