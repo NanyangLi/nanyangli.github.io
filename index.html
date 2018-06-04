@@ -108,57 +108,6 @@
 
   <title> NanYang -  </title>
 </head>
-<<<<<<< HEAD
-<body>
-<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/nebPay.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-<script src="js/nebulas.js"></script>
-<!--<script src="js/nebpay.js"></script>-->
-<script type="text/javascript">
-    "use strict";
-    var dappAddress = "n1pBdAdgQ9HTxUtTdumTn8NNcPZQ5NPPdWd";
-    var nebulas = require("nebulas"), Account = Account, neb = new nebulas.Neb();
-    neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"))
-    var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
-    var nebPay = new NebPay();
-
-    function calculate() {
-        var amount = document.getElementById('amount');
-        var apr = document.getElementById('apr');
-        var years = document.getElementById('years');
-        var payment = document.getElementById('payment');
-        var total = document.getElementById('total');
-        var totalinterest = document.getElementById('totalinterest');
-
-        var gas_price = "1000000";
-        var gas_limit = "2000000";
-        var callArgs = "[" + amount.value + "," + apr.value + "," + years.value + "]";
-        console.log(callArgs);
-        var contract = {
-            "function": "calculate",
-            "args": callArgs
-        };
-
-        nebPay.call(dappAddress, "0.0001", "calculate", callArgs, {
-            listener: function (value) {
-                console.log(value);
-                neb.api.call(dappAddress, dappAddress, "0", "0", gas_price, gas_limit, contract).then(function (value) {
-                    var result = value.result;
-                    result = JSON.parse(result);
-                    payment.innerText = result.payment;
-                    total.innerText = result.total;
-                    totalinterest.innerText = result.totalinterest;
-                }).catch(function (reason) {
-                    console.log("error" + reason.message + reason.code);
-                })
-            }
-        });
-
-    }
-=======
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -476,7 +425,6 @@
           
 
           
->>>>>>> parent of 205f4e9... Loan calculator
 
           
           
@@ -746,63 +694,6 @@
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<<<<<<< HEAD
-<table>
-    <tr>
-        <th>贷款利息计算器 :</th>
-        <td></td>
-    </tr>
-    <tr>
-        <td>贷款金额 (￥) :</td>
-        <td><input id="amount"/></td>
-        <td rowspan=8>
-            <canvas id='graph' width=400 height=250></canvas>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            年利率 (%) :
-        </td>
-        <td><input id='apr'/></td>
-    </tr>
-    <tr>
-        <td>
-            还款期限 (年) :
-        </td>
-        <td><input id='years'/></td>
-    </tr>
-    <tr>
-        <td>
-            金额 :
-        </td>
-        <td>
-            <button onclick="calculate()">计算</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            月还款额:
-        </td>
-        <td>￥<span id="payment"></span></td>
-    </tr>
-    <tr>
-        <td>
-            总还款额:
-        </td>
-        <td>￥<span id="total"></span></td>
-    </tr>
-    <tr>
-        <td>
-            总利息额:
-        </td>
-        <td>￥<span id="totalinterest"></span></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
-=======
 <div class="copyright" >
   
   &copy; 
@@ -817,7 +708,6 @@
 </span>
 </span>
 </div>
->>>>>>> parent of 205f4e9... Loan calculator
 
         
 
